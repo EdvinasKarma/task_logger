@@ -1,0 +1,30 @@
+[
+    {
+        "id": "new_id",
+        "description": "do homework",
+        "category": "study",
+        "status": "pending",
+        "created": "2026-02-04 19:43:41"
+    },
+    {
+        "id": "new_id",
+        "description": "do home workout",
+        "category": "sport",
+        "status": "pending",
+        "created": "2026-02-04 19:44:43"
+    },
+    {
+        "id": "new_id",
+        "description": "meet friends",
+        "category": "free time",
+        "status": "pending",
+        "created": "2026-02-04 19:45:30"
+    },
+    {
+        "id": "new_id",
+        "description": "read a book",
+        "category": "study",
+        "status": "completed",
+        "created": "2026-02-04 19:45:59"
+    }
+]
