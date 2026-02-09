@@ -1,1 +1,1 @@
-naujas projektas
+Atnaujintas readme
