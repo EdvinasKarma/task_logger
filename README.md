@@ -1,4 +1,4 @@
-# Atnaujintas readme
+# Task logger project
 
 ## Kaip paleisti projekta
 ```bash
