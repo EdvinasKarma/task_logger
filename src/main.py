@@ -1,8 +1,10 @@
-from storage_manager import read_json, _file_path
+from storage_manager import StorageManager
 from task_logger import add_task, complete_task, generate_summary, list_tasks
 
+storage_manager = StorageManager()
+
 def main():
-    data = read_json(_file_path)
+    data = storage_manager.read_json()
     print("Task Logger Menu:")
     print("1. Add task")
     print("2. Complete task")
@@ -22,6 +24,7 @@ def main():
         print("Goodbye!")
     else:
         print("Bad input")
+
 
 if __name__ == "__main__":
     main()

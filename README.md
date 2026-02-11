@@ -2,5 +2,5 @@
 
 ## Kaip paleisti projekta
 ```bash
-uv run python main.py
+uv run src/main.py
 ```

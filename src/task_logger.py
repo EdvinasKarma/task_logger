@@ -1,5 +1,5 @@
 from datetime import datetime
-from storage_manager import read_json, write_json, _file_path
+from storage_manager import storage_manager
 
 
 def add_task(data: list):
@@ -15,7 +15,7 @@ def add_task(data: list):
         "created": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
     }
     data.append(new_task)
-    write_json(_file_path, data)
+    storage_manager.write_json(data)
 
     print(f"Task added with ID {new_id}")
 
@@ -24,7 +24,7 @@ def complete_task(data: list):
     id = int(input("ID: "))
     data[id - 1]["status"] = "completed"
 
-    write_json(_file_path, data)
+    storage_manager.write_json(data)
 
     print(f"Task with ID {id} was completed")
 
@@ -38,7 +38,6 @@ def list_tasks(data: list):
 
     filter_by = int(input())
 
-    data = read_json(_file_path)
     if filter_by == 1:
         for task in data:
             print(
