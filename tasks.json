@@ -54,5 +54,19 @@
         "category": "ate",
         "status": "pending",
         "created": "2026-02-11 18:57:58"
+    },
+    {
+        "id": 9,
+        "description": "new task",
+        "category": "new description",
+        "status": "completed",
+        "created": "2026-02-12 20:13:02"
+    },
+    {
+        "id": 10,
+        "description": "run",
+        "category": "sport",
+        "status": "pending",
+        "created": "2026-02-12 20:14:04"
     }
 ]

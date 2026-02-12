@@ -1,10 +1,11 @@
 from storage_manager import StorageManager
-from task_logger import add_task, complete_task, generate_summary, list_tasks
+from task_logger import TaskLogger
 
 storage_manager = StorageManager()
 
 def main():
     data = storage_manager.read_json()
+    task_logger = TaskLogger(data)
     print("Task Logger Menu:")
     print("1. Add task")
     print("2. Complete task")
@@ -13,13 +14,13 @@ def main():
     print("5. Exit")
     choice = int(input())
     if choice == 1:
-        add_task(data)
+        task_logger.add_task()
     elif choice == 2:
-        complete_task(data)
+        task_logger.complete_task()
     elif choice == 3:
-        list_tasks(data)
+        task_logger.filter_tasks()
     elif choice == 4:
-        generate_summary(data)
+        task_logger.generate_summary()
     elif choice == 5:
         print("Goodbye!")
     else:
