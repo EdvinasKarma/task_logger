@@ -3,6 +3,7 @@ from task_logger import TaskLogger
 
 storage_manager = StorageManager()
 
+
 def main():
     data = storage_manager.read_json()
     task_logger = TaskLogger(data)
