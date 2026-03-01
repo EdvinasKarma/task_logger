@@ -30,10 +30,9 @@ class TaskLogger:
                 if id > len(self.data) or id == 0:
                     print(f"ID not exist. Available ID's: 1 to {len(self.data)}.")
                     try_again = input("Try again? Y/N - ")
-                    if try_again == "Y":
+                    if try_again.upper() == "Y":
                         continue
-                    elif try_again == "N":
-                        print("Goodbye!")
+                    elif try_again.upper() == "N":
                         return None
                 break
             except ValueError:
@@ -64,10 +63,9 @@ class TaskLogger:
                 if filter_by > 5 or filter_by == 0:
                     print("Select one of four filter options")
                     try_again = input("Try again? Y/N - ")
-                    if try_again == "Y":
+                    if try_again.upper() == "Y":
                         continue
-                    elif try_again == "N":
-                        print("Goodbye!")
+                    elif try_again.upper() == "N":
                         return None
                 break
             except ValueError:
@@ -98,10 +96,9 @@ class TaskLogger:
                     if category_choice > len(categories) or category_choice == 0:
                         print("Select a category from the list")
                         try_again = input("Try again? Y/N - ")
-                        if try_again == "Y":
+                        if try_again.upper() == "Y":
                             continue
-                        elif try_again == "N":
-                            print("Goodbye!")
+                        elif try_again.upper() == "N":
                             return None
                     break
                 except ValueError:

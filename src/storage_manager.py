@@ -11,17 +11,12 @@ class StorageManager:
                 data = json.load(file)
             return data
         except FileNotFoundError:
-            print("File not found")
-            raise FileNotFoundError
+            raise
 
     def write_json(self, data):
-        try:
-            with open(f"{self.file_path}", "w") as file:
-                json.dump(data, file, indent=4)
-            return None
-        except FileNotFoundError:
-            print("File not found")
-            raise FileNotFoundError
+        with open(f"{self.file_path}", "w") as file:
+            json.dump(data, file, indent=4)
+        return None
 
 
 storage_manager = StorageManager()
