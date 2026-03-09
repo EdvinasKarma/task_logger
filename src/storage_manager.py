@@ -13,7 +13,9 @@ class StorageManager:
         except FileNotFoundError:
             raise
 
-    def write_json(self, data):
+    def save_json(self, data: list, task: dict = None):
+        if task:
+            data.append(task)
         with open(f"{self.file_path}", "w") as file:
             json.dump(data, file, indent=4)
         return None

@@ -19,13 +19,15 @@ def main():
         print("5. Exit")
         choice = int(input())
         if choice == 1:
-            task_logger.add_task()
+            new_task = task_logger.create_task()
+            storage_manager.save_json(data, new_task)
+            print(f"Task added with ID {new_task["id"]}")
         elif choice == 2:
             task_logger.complete_task()
         elif choice == 3:
             task_logger.filter_tasks()
         elif choice == 4:
-            task_logger.generate_summary()
+            print(task_logger.generate_summary())
         elif choice == 5:
             print("Goodbye!")
             break

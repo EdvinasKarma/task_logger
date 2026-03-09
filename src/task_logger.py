@@ -6,9 +6,16 @@ class TaskLogger:
     def __init__(self, data: list):
         self.data = data
 
-    def add_task(self):
-        description = input("Description: ")
-        category = input("Category: ")
+    def create_task(self, description = None, category = None):
+        if not description and not category:
+            while True:
+                description = input("Description: ")
+                category = input("Category: ")
+
+                if description == "" or category == "":
+                    print("Description and/or Category should not be empty")
+                    continue
+                break
 
         new_id = len(self.data) + 1
         new_task = {
@@ -18,10 +25,8 @@ class TaskLogger:
             "status": "pending",
             "created": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         }
-        self.data.append(new_task)
-        storage_manager.write_json(self.data)
 
-        print(f"Task added with ID {new_id}")
+        return new_task
 
     def complete_task(self):
         while True:
@@ -42,7 +47,7 @@ class TaskLogger:
             print("Task already completed")
         else:
             self.data[id - 1]["status"] = "completed"
-            storage_manager.write_json(self.data)
+            storage_manager.save_json(self.data)
             print(f"Task with ID {id} was completed")
 
     def filter_tasks(self):
@@ -117,6 +122,9 @@ class TaskLogger:
                 completed_tasks = completed_tasks + 1
             elif task["status"] == "pending":
                 pending_tasks = pending_tasks + 1
-        print(f"Total tasks: {total_tasks}")
-        print(f"Completed: {completed_tasks}")
-        print(f"Pending: {pending_tasks}")
+
+        return (
+            f"Total tasks: {total_tasks}\n"
+            f"Completed: {completed_tasks}\n"
+            f"Pending: {pending_tasks}"
+        )
